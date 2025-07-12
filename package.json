@@ -6,10 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-"build:backend": "npm install",
-  "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
-  "copy:frontend": "copyfiles -u 1 frontend/build/**/* client/dist",
-  "build": "npm run build:backend && npm run build:frontend && npm run copy:frontend"
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
