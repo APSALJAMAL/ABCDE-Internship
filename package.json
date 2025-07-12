@@ -6,7 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+"build:backend": "npm install",
+  "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
+  "copy:frontend": "copyfiles -u 1 frontend/build/**/* client/dist",
+  "build": "npm run build:backend && npm run build:frontend && npm run copy:frontend"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +19,14 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
-    "mongoose": "^8.16.3"
+    "mongoose": "^8.16.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
